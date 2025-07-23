@@ -70,7 +70,8 @@ video {
     top: 20;
 }
 
-#map {
+#map,
+#management {
     width: 100%;
 }
 
