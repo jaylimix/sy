@@ -2,6 +2,8 @@
 
 <link rel="stylesheet" href="index.css">
 
+<script type="text/javascript" src="main.js"></script>
+
 <center id="top_bar">
 
     <a href="/"><img src="logo.png" id="logo" /></a>
@@ -24,9 +26,7 @@
 
 <center id="my_links">
 
-    <a href="#">About Us</a>
-
-    <a href="#">Contact Us</a>
+    <a href="About_Us">About Us</a>
 
     <a href="#">Covers</a>
 
@@ -40,26 +40,3 @@
 
     <a href="#">Electromagnetic Locks Door Handles</a>
 </center>
-
-<script>
-    function burger(test) {
-
-        if (test.className == 'fa fa-bars') {
-
-            test.classList.remove('fa-bars')
-
-            test.classList.add('fa-times')
-
-            document.getElementById('my_links').style.display = 'block'
-        }
-        else {
-
-            test.classList.remove('fa-times')
-
-            test.classList.add('fa-bars')
-
-            document.getElementById('my_links').style.display = 'none'
-        }
-
-    }
-</script>

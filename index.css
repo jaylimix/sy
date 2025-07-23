@@ -17,12 +17,11 @@ body {
     z-index: -1;
 }
 
-#logo {}
-
 video {
     position: fixed;
     top: 0;
     z-index: -3;
+    width: 100%;
 }
 
 #overlay {
@@ -63,4 +62,26 @@ video {
 #my_links a:hover {
     background: grey;
     color: white;
+}
+
+#factory {
+    width: 100%;
+    position: relative;
+    top: 20;
+}
+
+#map {
+    width: 100%;
+}
+
+#about_us,
+#contact_us {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+#move_up {
+    position: relative;
+    bottom: 160px;
 }
