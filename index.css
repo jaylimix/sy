@@ -7,20 +7,14 @@ body {
     top: 10;
 }
 
-#top_background {
+#top_bar {
+    padding: 20px;
     background: white;
-    height: 90px;
-    opacity: 0.8;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: -1;
+    position: relative;
+    z-index: 1;
 }
 
 video {
-    position: fixed;
-    top: 0;
-    z-index: -3;
     width: 100%;
 }
 
@@ -31,7 +25,6 @@ video {
     height: 100%;
     top: 0;
     opacity: 0.3;
-    z-index: -2;
 }
 
 #burger {
@@ -39,14 +32,16 @@ video {
     right: 20;
     font-size: 50px;
     color: black;
-    top: 20px;
+    top: 30px;
 }
 
 #my_links {
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    top: 22;
+    position: fixed;
+    width: 100%;
+    top: 112px;
     display: none;
+    z-index: 1;
 }
 
 #my_links a {
