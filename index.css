@@ -2,11 +2,6 @@ body {
     margin: 0;
 }
 
-#logo {
-    position: relative;
-    top: 10;
-}
-
 #top_bar {
     padding: 20px;
     background: white;
@@ -59,12 +54,7 @@ video {
     color: white;
 }
 
-#factory {
-    width: 100%;
-    position: relative;
-    top: 20;
-}
-
+#factory,
 #map,
 #management {
     width: 100%;
