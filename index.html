@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="index.css">
+
+<center id="top_bar">
+
+    <a href="/"><img src="logo.png" id="logo" /></a>
+
+    <a href="javascript:void(0);" class="icon" id="burger">
+
+        <i onclick="burger(this)" class="fa fa-bars"></i>
+
+    </a>
+
+</center>
+
+<div id="top_background"></div>
+
+<video autoplay muted loop>
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+<div id="overlay"></div>
+
+<center id="my_links">
+
+    <a href="#">About Us</a>
+
+    <a href="#">Contact Us</a>
+
+    <a href="#">Covers</a>
+
+    <a href="#">Brackets</a>
+
+    <a href="#">Door Loops</a>
+
+    <a href="#">Push Buttons</a>
+
+    <a href="#">Electromagnetic Locks</a>
+
+    <a href="#">Electromagnetic Locks Door Handles</a>
+</center>
+
+<script>
+    function burger(test) {
+
+        if (test.className == 'fa fa-bars') {
+
+            test.classList.remove('fa-bars')
+
+            test.classList.add('fa-times')
+
+            document.getElementById('my_links').style.display = 'block'
+        }
+        else {
+
+            test.classList.remove('fa-times')
+
+            test.classList.add('fa-bars')
+
+            document.getElementById('my_links').style.display = 'none'
+        }
+
+    }
+</script>
