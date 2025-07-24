@@ -43,49 +43,62 @@
 
 </center>
 
-<div id="container">
-
-    <div id="content">
-
-        <img src="/Covers/0.png" />
-
-        <center class="product_code">
-            <span id="pc0">EF300C</span>
-        </center>
-
-        <center class="dynamic_content" id="dc0">Aluminium Cover For EF300 Lock Range</center>
-
-        <div class="selector">
-            <span class="summary" id="sum0" onclick="switching(this, 0)">Summary</span>
-            <span class="description" id="desc0" onclick="switching(this, 0)">Description</span>
-            <span class="downloads" id="down0" onclick="switching(this, 0)">Downloads</span>
-        </div>
-    </div>
-</div>
+<div id="container"></div>
 
 <script>
-    function switching(self, count) {
+    const products = [
+        {
+            "product_code": "EF300C",
+            "summary": "Aluminium Cover For EF300 Lock Range",
+            "description": "This aluminium cover is designed to conceal the electromagnetic lock with its bracket when the door is closed.<br/><br/>It is a cover for EF300 lock series with EF300L and EF300/550Z brackets",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing"
+            ]
+        },
+        {
+            "product_code": "EF550C",
+            "summary": "Aluminium Cover For EF550 Lock Range",
+            "description": "This aluminium cover is designed to conceal the electromagnetic lock with its bracket when the door is closed.<br/><br/>It is a cover for EF550 lock series with EF500L and EF300/550Z brackets",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram_1",
+                "mounting_diagram_2",
+                "mounting_diagram_3",
+                "mounting_diagram_4"
+            ]
+        }
+    ]
 
-        const products = [
-            {
-                "product_code": "EF300C",
-                "downloads": [
-                    "product_catalog",
-                    "dimensional_drawing"
-                ]
-            },
-            {
-                "product_code": "EF550C",
-                "downloads": [
-                    "product_catalog",
-                    "dimensional_drawing",
-                    "mounting_diagram_1",
-                    "mounting_diagram_2",
-                    "mounting_diagram_3",
-                    "mounting_diagram_4"
-                ]
-            }
-        ]
+    products.forEach(generate)
+
+    function generate(item, index, arr) {
+
+        document.getElementById('container').innerHTML += '<div class="content">' +
+
+            '<img src="/Covers/' + products[index]['product_code'] + '/image.jpg" />' +
+
+            '<center class="product_code">' +
+
+            '<span>' + products[index]['product_code'] + '</span>' +
+
+            '</center>' +
+
+            '<center class="dynamic_content" id="dc' + index + '">' + products[index]['summary'] + '</center>' +
+
+            '<div class="selector">' +
+
+            '<span class="summary" id="sum' + index + '" onclick="switching(this, ' + index + ')">Summary</span>' +
+
+            '<span class="description" id="desc' + index + '" onclick="switching(this, ' + index + ')">Description</span>' +
+
+            '<span class="downloads" id="down' + index + '" onclick="switching(this, ' + index + ')">Downloads</span>' +
+
+            '</div>'
+    }
+
+    function switching(self, count) {
 
         let folder = products[count]['product_code']
 
@@ -103,12 +116,12 @@
 
         if (self.className == 'summary') {
 
-            document.getElementById('dc' + count).innerHTML = 'Aluminium Cover For EF300 Lock Range'
+            document.getElementById('dc' + count).innerHTML = products[count]['summary']
         }
 
         if (self.className == 'description') {
 
-            document.getElementById('dc' + count).innerHTML = 'This aluminium cover is designed to conceal the electromagnetic lock with its bracket when the door is closed.<br/><br/>It is a cover for EF300 lock series with EF300L and EF300/550Z brackets.'
+            document.getElementById('dc' + count).innerHTML = products[count]['description']
         }
 
         if (self.className == 'downloads') {
@@ -121,8 +134,6 @@
 
                 document.getElementById('dc' + count).innerHTML += '<a target="_blank" href="/Covers/' + folder + '/' + item + '.pdf">' + item.replace('_', ' ').toUpperCase() + '</a>'
             }
-
-
         }
     }
 

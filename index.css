@@ -51,16 +51,17 @@ img {
         font-size: 50px;
     }
 
-    #content {
+    .content {
         width: 500px;
     }
 }
 
 .dynamic_content {
-    height: 400px;
+    height: 200px;
     align-content: center;
     border-top: 3px solid black;
     background: white;
+    padding: 0px 10px;
 }
 
 .dynamic_content a {
@@ -105,16 +106,18 @@ img {
     border-top: 3px solid black;
 }
 
-#content {
+.content {
     border: 3px solid black;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 #container {
     display: flex;
-    justify-content: center;
     position: relative;
     top: 160px;
+    align-items: center;
+    flex-direction: column;
 }
 
 #overlay {
@@ -132,7 +135,7 @@ img {
     right: 20px;
     color: black;
     background: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
 }
 
