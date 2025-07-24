@@ -8,12 +8,34 @@ body {
     width: 100%;
 }
 
-video {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: -2;
+@media only screen and (max-width: 600px) {
+    video {
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: -2;
+        right: -90%;
+    }
+
+    #burger {
+        font-size: 30px;
+    }
 }
+
+@media only screen and (min-width: 601px) {
+    video {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: -2;
+    }
+
+    #burger {
+        font-size: 50px;
+    }
+}
+
+
 
 #overlay {
     background: black;
@@ -28,7 +50,6 @@ video {
 #burger {
     position: fixed;
     right: 20px;
-    font-size: 50px;
     color: black;
     background: white;
     padding: 20px;
