@@ -1,0 +1,129 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/index.css">
+
+<script type="text/javascript" src="/main.js"></script>
+
+<style>
+    body {
+        background-image: url('/Covers/cover.png');
+        background-size: cover;
+    }
+</style>
+
+<div id="top_bar">
+
+    <a href="/"><img id="logo" src="/logo.png" /></a>
+
+    <a href="javascript:void(0);" class="icon" id="burger">
+
+        <i onclick="burger(this)" class="fa fa-bars"></i>
+
+    </a>
+
+</div>
+
+<center id="my_links">
+
+    <a href="/About_Us">About Us</a>
+
+    <a href="/Covers">Covers</a>
+
+    <a href="/Brackets">Brackets</a>
+
+    <a href="/Door_Loops">Door Loops</a>
+
+    <a href="/Push_Buttons">Push Buttons</a>
+
+    <a href="/Electromagnetic_Locks">Electromagnetic Locks</a>
+
+    <a href="/Electromagnetic_Locks_Door_Handles">Electromagnetic Locks Door Handles</a>
+
+</center>
+
+<div id="container">
+
+    <div id="content">
+
+        <img src="/Covers/0.png" />
+
+        <center class="product_code">
+            <span id="pc0">EF300C</span>
+        </center>
+
+        <center class="dynamic_content" id="dc0">Aluminium Cover For EF300 Lock Range</center>
+
+        <div class="selector">
+            <span class="summary" id="sum0" onclick="switching(this, 0)">Summary</span>
+            <span class="description" id="desc0" onclick="switching(this, 0)">Description</span>
+            <span class="downloads" id="down0" onclick="switching(this, 0)">Downloads</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switching(self, count) {
+
+        const products = [
+            {
+                "product_code": "EF300C",
+                "downloads": [
+                    "product_catalog",
+                    "dimensional_drawing"
+                ]
+            },
+            {
+                "product_code": "EF550C",
+                "downloads": [
+                    "product_catalog",
+                    "dimensional_drawing",
+                    "mounting_diagram_1",
+                    "mounting_diagram_2",
+                    "mounting_diagram_3",
+                    "mounting_diagram_4"
+                ]
+            }
+        ]
+
+        let folder = products[count]['product_code']
+
+        document.getElementById('sum' + count).style.borderTop = '3px solid black'
+        document.getElementById('sum' + count).style.background = 'unset'
+
+        document.getElementById('desc' + count).style.borderTop = '3px solid black'
+        document.getElementById('desc' + count).style.background = 'unset'
+
+        document.getElementById('down' + count).style.borderTop = '3px solid black'
+        document.getElementById('down' + count).style.background = 'unset'
+
+        self.style.background = 'white'
+        self.style.borderTop = '3px solid white'
+
+        if (self.className == 'summary') {
+
+            document.getElementById('dc' + count).innerHTML = 'Aluminium Cover For EF300 Lock Range'
+        }
+
+        if (self.className == 'description') {
+
+            document.getElementById('dc' + count).innerHTML = 'This aluminium cover is designed to conceal the electromagnetic lock with its bracket when the door is closed.<br/><br/>It is a cover for EF300 lock series with EF300L and EF300/550Z brackets.'
+        }
+
+        if (self.className == 'downloads') {
+
+            document.getElementById('dc' + count).innerHTML = ''
+
+            products[count]['downloads'].forEach(myFunction)
+
+            function myFunction(item, index, arr) {
+
+                document.getElementById('dc' + count).innerHTML += '<a target="_blank" href="/Covers/' + folder + '/' + item + '.pdf">' + item.replace('_', ' ').toUpperCase() + '</a>'
+            }
+
+
+        }
+    }
+
+</script>
