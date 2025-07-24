@@ -51,7 +51,7 @@ video {
     text-decoration: none;
     color: black;
     background: darkgrey;
-    margin-bottom: 2px;
+    border-bottom: 1px solid white;
 }
 
 #my_links a:hover {
