@@ -166,6 +166,8 @@ body {
     background: white;
     padding: 10px;
     border-radius: 10px;
+    border: 3px solid black;
+    cursor: pointer;
 }
 
 #my_links {
@@ -175,6 +177,7 @@ body {
     top: 112px;
     display: none;
     z-index: 1;
+    border-top: 1px solid white;
 }
 
 #my_links a {
