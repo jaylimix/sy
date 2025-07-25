@@ -23,7 +23,8 @@ body {
     width: auto;
 }
 
-#bottom_image {
+#bottom_image,
+#small_bottom_image {
     background-color: rgb(0, 0, 0, 0.5);
     position: fixed;
     bottom: 0px;
@@ -53,9 +54,21 @@ body {
     #bottom_image img {
         width: 100%;
     }
+
+    #bottom_image {
+        display: none;
+    }
+
+    #small_bottom_image img {
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 601px) {
+
+    #small_bottom_image {
+        display: none;
+    }
 
     video {
         width: 100%;
