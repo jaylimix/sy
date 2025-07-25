@@ -1,0 +1,310 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/index.css">
+
+<script type="text/javascript" src="/main.js"></script>
+
+<style>
+    body {
+        background-image: url('/cover.png');
+        background-size: contain;
+    }
+
+    img {
+        max-width: 500px;
+    }
+</style>
+
+<div id="top_bar">
+
+    <a href="/"><img id="logo" src="/logo.png" /></a>
+
+    <a href="javascript:void(0);" class="icon" id="burger">
+
+        <i onclick="burger(this)" class="fa fa-bars"></i>
+
+    </a>
+
+</div>
+
+<center id="my_links">
+
+    <a href="/About_Us">About Us</a>
+
+    <a href="/Covers">Covers</a>
+
+    <a href="/Brackets">Brackets</a>
+
+    <a href="/Door_Loops">Door Loops</a>
+
+    <a href="/Push_Buttons">Push Buttons</a>
+
+    <a href="/Electromagnetic_Locks">Electromagnetic Locks</a>
+
+    <a href="/Electromagnetic_Locks_Door_Handles">Electromagnetic Locks Door Handles</a>
+
+</center>
+
+<div id="container"></div>
+
+<script>
+    const products = [
+        {
+            "product_code": "EF150LS",
+            "summary": "Bracket LS-300",
+            "description": "This bracket is for in-swing or out-swing doors<br/><br/>It is to mount EF150 lock",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing"
+            ]
+        },
+        {
+            "product_code": "EF150ZL",
+            "summary": "Bracket ZL-300",
+            "description": "This bracket is made up of Z and L brackets to mount the armature plate and electromagnetic lock respectively<br/><br/>Depending on where the lock faces it can be for either in-swing or out-swing doors<br/><br/>It is for EF150 or EF150CTC",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing"
+            ]
+        },
+        {
+            "product_code": "EF150U",
+            "summary": "Bracket U1-300",
+            "description": "This bracket is for glass doors of 10-13mm thickness<br/><br/>It is for EF150 and EF150CTC",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing"
+            ]
+        },
+        {
+            "product_code": "EF300L",
+            "summary": "Adjustable L Bracket For EF300 Range",
+            "description": "This adjustable L bracket is to mount electromagnetic lock for best alignment with the armature plate<br/><br/>It is for EF300 or EF300CTC electromagnetic locks",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram"
+            ]
+        },
+        {
+            "product_code": "EF300L-2",
+            "summary": "Adjustable L Bracket For EF300 Double Lock Range",
+            "description": "This adjustable bracket is specially for double lock meant for EF300-2 or EF300CTC-2 only",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing"
+            ]
+        },
+        {
+            "product_code": "EF300SCP",
+            "summary": "Mounting Housing For Armature Plate EF300 Range",
+            "description": "This bracket is to mount EF300 armature plate<br/><br/>Using this bracket does not require drilling a hole through the door to fix the armature plate which is a prerequisite of a fire door rating",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram"
+            ]
+        },
+        {
+            "product_code": "EF300-EF550Z",
+            "summary": "Adjustable Z Bracket",
+            "description": "This bracket is for EF300 and EF550 lock series<br/><br/>The adjustable bracket ensures good alignment with the armature plate for optimum holding force<br/><br/>It is meant for any types of swing doors",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram_1",
+                "mounting_diagram_2",
+                "mounting_diagram_3",
+                "mounting_diagram_4",
+                "mounting_diagram_5"
+            ]
+        },
+        {
+            "product_code": "EF300/550UL",
+            "summary": "U-Mounting Sleeve for Glass Door",
+            "description": "This bracket is for glass doors<br/><br/>It is for EF300 lock series or EF550 lock series.<br/><br/>It is used with bracket EF300L or EF550L bracket<br/><br/>It is for glass thickness of 10-13mm.",
+            "downloads": [
+                "product_catalog",
+                "mounting_diagram_1",
+                "mounting_diagram_2"
+            ]
+        },
+        {
+            "product_code": "EF300/550UZAP",
+            "summary": "U-Mounting Sleeve for Glass Door",
+            "description": "This bracket is for glass doors<br/><br/>It is for either EF300 lock series or EF550 lock series<br/><br/>It is used together with EF300/550Z bracket<br/><br/>It is for glass thickness of 10-13mm. ",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram_1",
+                "mounting_diagram_2",
+                "mounting_diagram_3",
+                "mounting_diagram_4",
+                "mounting_diagram_5",
+                "mounting_diagram_6"
+            ]
+        },
+        {
+            "product_code": "EF550L",
+            "summary": "Adjustable L Bracket for EF550 Range",
+            "description": "This adjustable L bracket is to mount electromagnetic lock for best alignment with the armature plate<br/><br/> It is for EF550 or EF550CTC electromagnetic locks",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram"
+            ]
+        },
+        {
+            "product_code": "EF550L",
+            "summary": "Adjustable L Bracket for EF550 Double Lock Range",
+            "description": "This adjustable bracket is specially for double lock meant for EF550-2 or EF550CTC-2 only",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing"
+            ]
+        },
+        {
+            "product_code": "EF550SCP",
+            "summary": "Mounting Housing For Armature Plate EF550 Range",
+            "description": "This bracket is to mount EF550 armature plate<br/><br/>Using this bracket does not require drilling a hole through the door to fix the armature plate which is a prerequisite of a fire door rating",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram"
+            ]
+        },
+        {
+            "product_code": "EXT200L",
+            "summary": "Adjustable L Bracket for EXT200CTC",
+            "description": "This bracket is to mount EXT200CTC lock whereby it can be adjusted to have perfect alignment with the armature plate",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram"
+            ]
+        },
+        {
+            "product_code": "EXT200Z",
+            "summary": "Adjustable Z Bracket for EXT200CTC",
+            "description": "The Z bracket is to mount armature plate of EXT200CTC<br/><br/>It can be adjusted to have perfect alignment with the electromagnetic lock",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram"
+            ]
+        },
+        {
+            "product_code": "EXT400L",
+            "summary": "Adjustable L Bracket for EXT400CTC",
+            "description": "This bracket is to mount EXT400CTC lock whereby it can be adjusted to have perfect alignment with the armature plate",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram"
+            ]
+        },
+        {
+            "product_code": "EXT400Z",
+            "summary": "Adjustable Z Bracket for EXT400CTC",
+            "description": "The Z bracket is to mount armature plate of EXT400CTC<br/><br/>It can be adjusted to have perfect alignment with the electromagnetic lock",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram"
+            ]
+        },
+        {
+            "product_code": "EXT750L",
+            "summary": "Adjustable L Bracket for EXT750CTC",
+            "description": "This bracket is to mount EXT750CTC lock whereby it can be adjusted to have perfect alignment with the armature plate",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram"
+            ]
+        },
+        {
+            "product_code": "EXT750Z",
+            "summary": "Adjustable Z Bracket for EXT750CTC",
+            "description": "The Z bracket is to mount armature plate of EXT750CTC<br/><br/>It can be adjusted to have perfect alignment with the electromagnetic lock",
+            "downloads": [
+                "product_catalog",
+                "dimensional_drawing",
+                "mounting_diagram"
+            ]
+        }
+    ]
+
+    products.forEach(generate)
+
+    function generate(item, index, arr) {
+
+        document.getElementById('container').innerHTML += '<div class="content">' +
+
+            '<div class="image_height">' +
+
+            '<img src="/Brackets/' + products[index]['product_code'] + '/lock.jpg" />' +
+
+            '</div>' +
+
+            '<center class="product_code">' +
+
+            '<span>' + products[index]['product_code'] + '</span>' +
+
+            '</center>' +
+
+            '<center class="dynamic_content" id="dc' + index + '">' + products[index]['summary'] + '</center>' +
+
+            '<div class="selector">' +
+
+            '<span class="summary" id="sum' + index + '" onclick="switching(this, ' + index + ')">Summary</span>' +
+
+            '<span class="description" id="desc' + index + '" onclick="switching(this, ' + index + ')">Description</span>' +
+
+            '<span class="downloads" id="down' + index + '" onclick="switching(this, ' + index + ')">Downloads</span>' +
+
+            '</div>'
+    }
+
+    function switching(self, count) {
+
+        let folder = products[count]['product_code']
+
+        document.getElementById('sum' + count).style.borderTop = '3px solid black'
+        document.getElementById('sum' + count).style.background = 'unset'
+
+        document.getElementById('desc' + count).style.borderTop = '3px solid black'
+        document.getElementById('desc' + count).style.background = 'unset'
+
+        document.getElementById('down' + count).style.borderTop = '3px solid black'
+        document.getElementById('down' + count).style.background = 'unset'
+
+        self.style.background = 'white'
+        self.style.borderTop = '3px solid white'
+
+        if (self.className == 'summary') {
+
+            document.getElementById('dc' + count).innerHTML = products[count]['summary']
+        }
+
+        if (self.className == 'description') {
+
+            document.getElementById('dc' + count).innerHTML = products[count]['description']
+        }
+
+        if (self.className == 'downloads') {
+
+            document.getElementById('dc' + count).innerHTML = ''
+
+            products[count]['downloads'].forEach(myFunction)
+
+            function myFunction(item, index, arr) {
+
+                document.getElementById('dc' + count).innerHTML += '<a target="_blank" href="/Brackets/' + folder + '/' + item + '.pdf">' + item.replace('_', ' ').toUpperCase() + '</a>'
+            }
+        }
+    }
+
+</script>

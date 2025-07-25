@@ -8,8 +8,12 @@
 
 <style>
     body {
-        background-image: url('/Covers/cover.png');
-        background-size: cover;
+        background-image: url('/cover.png');
+        background-size: contain;
+    }
+
+    img {
+        max-width: 500px;
     }
 </style>
 
@@ -50,7 +54,7 @@
         {
             "product_code": "EF300C",
             "summary": "Aluminium Cover For EF300 Lock Range",
-            "description": "This aluminium cover is designed to conceal the electromagnetic lock with its bracket when the door is closed.<br/><br/>It is a cover for EF300 lock series with EF300L and EF300/550Z brackets",
+            "description": "This aluminium cover is designed to conceal the electromagnetic lock with its bracket when the door is closed<br/><br/>It is a cover for EF300 lock series with EF300L and EF300/550Z brackets",
             "downloads": [
                 "product_catalog",
                 "dimensional_drawing"
@@ -59,7 +63,7 @@
         {
             "product_code": "EF550C",
             "summary": "Aluminium Cover For EF550 Lock Range",
-            "description": "This aluminium cover is designed to conceal the electromagnetic lock with its bracket when the door is closed.<br/><br/>It is a cover for EF550 lock series with EF500L and EF300/550Z brackets",
+            "description": "This aluminium cover is designed to conceal the electromagnetic lock with its bracket when the door is closed<br/><br/>It is a cover for EF550 lock series with EF500L and EF300/550Z brackets",
             "downloads": [
                 "product_catalog",
                 "dimensional_drawing",
@@ -77,7 +81,11 @@
 
         document.getElementById('container').innerHTML += '<div class="content">' +
 
-            '<img src="/Covers/' + products[index]['product_code'] + '/image.jpg" />' +
+            '<div class="image_height">' +
+
+            '<img src="/Covers/' + products[index]['product_code'] + '/lock.jpg" />' +
+
+            '</div>' +
 
             '<center class="product_code">' +
 

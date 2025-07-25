@@ -14,7 +14,7 @@ body {
 }
 
 img {
-    width: 100%;
+    height: 100%;
 }
 
 #logo {
@@ -54,6 +54,18 @@ img {
     .content {
         width: 500px;
     }
+
+    #container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+}
+
+.image_height {
+    height: 200px;
+    text-align: center;
+    background-color: white;
 }
 
 .dynamic_content {
@@ -113,11 +125,9 @@ img {
 }
 
 #container {
-    display: flex;
     position: relative;
     top: 160px;
-    align-items: center;
-    flex-direction: column;
+    z-index: -1;
 }
 
 #overlay {
