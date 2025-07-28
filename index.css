@@ -116,11 +116,16 @@ td {
 }
 
 .dynamic_content_for_locks {
-    height: 360px;
+    height: 300px;
     align-content: center;
     border-top: 3px solid black;
     background: white;
     padding: 0px 10px;
+}
+
+.dynamic_content_for_locks a {
+    display: block;
+    padding-bottom: 10px;
 }
 
 .dynamic_content a {
