@@ -3,6 +3,15 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
 #top_bar {
     padding: 20px;
     position: fixed;
@@ -100,6 +109,14 @@ body {
 
 .dynamic_content {
     height: 200px;
+    align-content: center;
+    border-top: 3px solid black;
+    background: white;
+    padding: 0px 10px;
+}
+
+.dynamic_content_for_locks {
+    height: 360px;
     align-content: center;
     border-top: 3px solid black;
     background: white;
