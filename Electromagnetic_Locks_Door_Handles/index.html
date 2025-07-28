@@ -1,0 +1,245 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/x-icon" href="/favicon.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/index.css">
+
+<script type="text/javascript" src="/main.js"></script>
+
+<style>
+    body {
+        background-image: url('/cover.png');
+        background-size: contain;
+    }
+
+    img {
+        max-width: 300px;
+    }
+</style>
+
+<div id="top_bar">
+
+    <a href="/"><img id="logo" src="/logo.png" /></a>
+
+    <i onclick="burger(this)" class="fa fa-bars" id="burger"></i>
+
+</div>
+
+<center id="my_links">
+
+    <a href="/About_Us">About Us</a>
+
+    <a href="/Covers">Covers</a>
+
+    <a href="/Brackets">Brackets</a>
+
+    <a href="/Door_Loops">Door Loops</a>
+
+    <a href="/Push_Buttons">Push Buttons</a>
+
+    <a href="/Electromagnetic_Locks">Electromagnetic Locks</a>
+
+    <a href="/Electromagnetic_Locks_Door_Handles">Electromagnetic Locks Door Handles</a>
+
+</center>
+
+<div id="container"></div>
+
+<script>
+    const products = [
+        {
+            "product_code": "CPREG-1/400AS",
+            "summary": "Natural Anodizing Door Handle 12/24V DC + Contact<br/><br/>CPREG-1/400mm is a door handle incorporating a stainless steel electromagnetic lock with 600lb holding force<br/><br/>It comes in 2 pieces, one with the lock and wires already fitted and the other with armature plate installed<br/><br/>All screw holes have been pre-drilled for ease of installation<br/><br/>Installed vertically at mid-section of the door, the design of this product ensures perfect alignment and prevents tampering<br/><br/>This is because the wires, screws and armature plate are all hidden by metal covers and end caps<br/><br/>CPREG-1/400 is compatible with any alarm and access control systems<br/><br/>This handle can be installed only on aluminium and wooden doors",
+            "description": "<table><tr><td>Ip</td><td>42</td></tr><tr><td>Voltage</td><td>12/24VDC</td></tr><tr><td>Current</td><td>480/240mA</td></tr><tr><td>Holding Force</td><td>300lbs</td></tr><tr><td>Operating Temparature</td><td>-10° to 60°C</td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing_1", "dimensional_drawing_2", "mounting_diagram_1", "mounting_diagram_2", "mounting_diagram_3"]
+        },
+        {
+            "product_code": "CPREG-1/400B",
+            "summary": "Non-Anodized Door Handle 12/24V DC + Contact<br/><br/>This aluminium door handle can be fitted with a stainless steel electromagnetic lock of 600lbs holding force<br/><br/>It can be powder-coated to colour of choice to suit the colour of door or surrounding<br/><br/>Screw holes are pre-drilled and armature plate fitted into place<br/><br/>The design of this product ensures perfect alignment and prevents tampering as the wires, screws and armature plates are concealed by aluminium covers and end caps<br/><br/>It can be incorporated with alarm and access control systems<br/><br/>Installation is easy, fast and convenient<br/><br/>This handle can be installed only on aluminium and wooden doors",
+            "description": "<table><tr><td>Ip</td><td>42</td></tr><tr><td>Voltage</td><td>12/24VDC</td></tr><tr><td>Current</td><td>480/240mA</td></tr><tr><td>Holding Force</td><td>300lbs</td></tr><tr><td>Operating Temparature</td><td>-10° to 60°C</td></tr></table>",
+            "downloads": ["product_catalog"]
+        },
+        {
+            "product_code": "CPREG-P/400AS",
+            "summary": "Natural Anodizing Reinforcement Profile with Handle<br/><br/>This aluminium handle is an accessory for CPREG-1/400<br/><br/>It is an added compliment to the whole installation<br/><br/>This part is fixed to the other side of the door parallel to CPREG-1/400 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing", "mounting_diagram"]
+        },
+        {
+            "product_code": "CPREG-P/400B",
+            "summary": "Non-Anodized Reinforcement Profile with Handle<br/><br/>This non-anodized aluminium handle is an accessory for CPREG-1/400<br/><br/>It is an added compliment to the whole installation<br/><br/> This part is fixed to the other side of the door parallel to CPREG-1/400 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog"]
+        },
+        {
+            "product_code": "CPREG-S/400AS",
+            "summary": "Natural Anodizing Reinforcement Profile<br/><br/>This part acts as an optional accessory for CPREG-1/400 whereby it is fixed to the other side of the door parallel to CPREG-1/400 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing", "mounting_diagram"]
+        },
+        {
+            "product_code": "CPREG-S/400B",
+            "summary": "Non-Anodized Reinforcement Profile<br/><br/>This part acts as an optional accessory for CPREG-1/400 whereby it is fixed to the other side of the door parallel to CPREG-1/400 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog"]
+        },
+        {
+            "product_code": "CPREG-2/40B",
+            "summary": "Non-Anodized Electromagnetic Handle<br/><br/>400mm Electromagnetic handle CPREG-2 600lbs 12-24V DC + Contact",
+            "description": "<table><tr><td>Ip</td><td>42</td></tr><tr><td>Voltage</td><td>12/24VDC</td></tr><tr><td>Current</td><td>480/240mA</td></tr><tr><td>Holding Force</td><td>300lbs</td></tr><tr><td>Operating Temparature</td><td>-10° to 60°C</td></tr></table>",
+            "downloads": ["product_catalog"]
+        },
+        {
+            "product_code": "CPREG-2/40AS",
+            "summary": "Natural Anodizing Electromagnetic Handle<br/><br/>400mm Electromagnetic handle CPREG-2 600lbs 12-24V DC + Contact",
+            "description": "<table><tr><td>Ip</td><td>42</td></tr><tr><td>Voltage</td><td>12/24VDC</td></tr><tr><td>Current</td><td>480/240mA</td></tr><tr><td>Holding Force</td><td>300lbs</td></tr><tr><td>Operating Temparature</td><td>-10° to 60°C</td></tr></table>",
+            "downloads": ["product_catalog"]
+        },
+        {
+            "product_code": "CPREG-1/600AS",
+            "summary": "Natural Anodizing Electromagnetic Door Handle 12/24V DC + Contact<br/><br/>This is an aluminium door handle incorporating two 600lb holding force of stainless steel electromagnetic locks into it<br/><br/>The door handle lock comes in 2 pieces whereby the locks are already pre-mounted with wires and connectors on one piece and the armature plates are fitted on the other<br/><br/>Even the screw holes are pre-drilled for ease of installation<br/><br/>The design of this product ensures perfect alignment and prevents tampering as the wires, screws and armature plates are concealed by aluminium covers and end caps<br/><br/>It can be incorporated with any alarm and access control systems<br/><br/>Installation is easy, fast and convenient<br/><br/>Only wooden and aluminium doors are recommended for this product",
+            "description": "<table><tr><td>Ip</td><td>42</td></tr><tr><td>Voltage</td><td>12/24VDC</td></tr><tr><td>Current</td><td>960/480mA</td></tr><tr><td>Holding Force</td><td>300lbs x 2</td></tr><tr><td>Operating Temparature</td><td>-10° to 60°C</td></tr></table>",
+            "downloads": ["product_catalog"]
+        },
+        {
+            "product_code": "CPREG-1/600B",
+            "summary": "Non-Anodized Electromagnetic Door Handle 12/24V DC + Contact<br/><br/>This is an aluminium door handle that can be fitted with 2 stainless steel electromagnetic locks each with 600lb holding force<br/><br/>The door handle can be powder-coated to the colour of choice to suit the door or surrounding<br/><br/>Screw holes are pre-drilled and armature plates fitted into place<br/><br/>The design of this product ensures perfect alignment and prevents tampering as the wires, screws and armature plates are concealed by aluminium covers and end caps<br/><br/>It can be incorporated with any alarm and access control systems<br/><br/>",
+            "description": "<table><tr><td>Ip</td><td>42</td></tr><tr><td>Voltage</td><td>12/24VDC</td></tr><tr><td>Current</td><td>960/480mA</td></tr><tr><td>Holding Force</td><td>300lbs x 2</td></tr><tr><td>Operating Temparature</td><td>-10° to 60°C</td></tr></table>",
+            "downloads": ["product_catalog"]
+        },
+        {
+            "product_code": "CPREG-P/600AS",
+            "summary": "Natural Anodizing Reinforcement Profile with Handle<br/><br/>This aluminium handle is an accessory for CPREG-1/600<br/><br/>It is an added compliment to the whole installation<br/><br/>This part is fixed to the other side of the door parallel to CPREG-1/600 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing", "mounting_diagram"]
+        },
+        {
+            "product_code": "CPREG-P/600B",
+            "summary": "Non-Anodized Reinforcement Profile with Handle<br/><br/>This non-anodized aluminium handle is an accessory for CPREG-1/600<br/><br/>It is an added compliment to the whole installation<br/><br/> This part is fixed to the other side of the door parallel to CPREG-1/600 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing", "mounting_diagram"]
+        },
+        {
+            "product_code": "CPREG-S/600AS",
+            "summary": "Natural Anodizing Reinforcement Profile<br/><br/>This part acts as an optional accessory for CPREG-1/600 whereby it is fixed to the other side of the door parallel to CPREG-1/600 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing", "mounting_diagram"]
+        },
+        {
+            "product_code": "CPREG-S/600B",
+            "summary": "Non-Anodized Reinforcement Profile<br/><br/>This part acts as an optional accessory for CPREG-1/600 whereby it is fixed to the other side of the door parallel to CPREG-1/600 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing", "mounting_diagram"]
+        },
+        {
+            "product_code": "CPREG-1/2500AS",
+            "summary": "Natural Anodizing Electromagnetic Door Handle 12/24V DC + Contact<br/><br/>This is an aluminium door handle incorporating two 600lb holding force of stainless steel electromagnetic locks into it<br/><br/>The door handle lock comes in 2 pieces whereby the locks are already pre-mounted with wires and connectors on one piece and the armature plates are fitted on the other<br/><br/>Even the screw holes are pre-drilled for ease of installation<br/><br/>The length of 2500mm can be specified and adjusted to the length of the doors if requested before delivery<br/><br/>Tampering of this product is made extremely difficult because the wires, screws and armature plates are concealed by its aluminium covers and end caps<br/><br/>The design of this product ensures perfect alignment<br/><br/>This CPREG handle is compatible with any alarm and access control systems<br/><br/>This handle can be installed only on aluminium and wooden doors",
+            "description": "<table><tr><td>Ip</td><td>42</td></tr><tr><td>Voltage</td><td>12/24VDC</td></tr><tr><td>Current</td><td>960/480mA</td></tr><tr><td>Holding Force</td><td>300lbs x 2</td></tr><tr><td>Operating Temparature</td><td>-10° to 60°C</td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing_1", "dimensional_drawing_2", "mounting_diagram_1", "mounting_diagram_2", "mounting_diagram_3"]
+        },
+        {
+            "product_code": "CPREG-1/2500B",
+            "summary": "Non Anodized Electromagnetic Door Handle 12/24V DC + Contact<br/><br/>This is an aluminium door handle that can be fitted with 2 stainless steel electromagnetic locks each with 600lb holding force<br/><br/>The door handle can be powder-coated to the colour of choice and the length can be adapted to the length of the door<br/><br/>The design of this product ensures perfect alignment and prevents tampering as the wires, screws and armature plates are concealed by aluminium covers and end caps<br/><br/> It can be incorporated with alarm and access control systems<br/><br/>This handle can be installed only on aluminium and wooden doors.",
+            "description": "<table><tr><td>Ip</td><td>42</td></tr><tr><td>Voltage</td><td>12/24VDC</td></tr><tr><td>Current</td><td>960/480mA</td></tr><tr><td>Holding Force</td><td>600lbs x 2</td></tr><tr><td>Operating Temparature</td><td>-10° to 60°C</td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing_1", "dimensional_drawing_2", "mounting_diagram_1", "mounting_diagram_2", "mounting_diagram_3"]
+        },
+        {
+            "product_code": "CPREG-P/2500AS",
+            "summary": "Natural Anodizing Reinforcement Profile with Handle<br/><br/>This is an aluminium door handle that can be fitted with 2 stainless steel electromagnetic locks each with 600lb holding force<br/><br/>The door handle can be powder-coated to the colour of choice and the length can be adapted to the length of the door<br/><br/>The design of this product ensures perfect alignment and prevents tampering as the wires, screws and armature plates are concealed by aluminium covers and end caps<br/><br/> It can be incorporated with alarm and access control systems<br/><br/>This handle can be installed only on aluminium and wooden doors.",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td>12/24VDC</td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog"]
+        },
+        {
+            "product_code": "CPREG-P/2500B",
+            "summary": "Non-Anodized Reinforcement Profile with Handle<br/><br/>This non-anodized aluminium handle is an accessory for CPREG-1/2500<br/><br/>It is an added compliment to the whole installation<br/><br/>This part is fixed to the other side of the door parallel to CPREG-1/2500 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog"]
+        },
+        {
+            "product_code": "CPREG-S/2500AS",
+            "summary": "Natural Anodizing Reinforcement Profile<br/><br/>This part acts as an optional accessory for CPREG-1/2500 whereby it is fixed to the other side of the door parallel to CPREG-1/2500 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing", "mounting_diagram"]
+        },
+        {
+            "product_code": "CPREG-S/2500B",
+            "summary": "Non-Anodized Reinforcement Profile<br/><br/>This part acts as an optional accessory for CPREG-1/2500 whereby it is fixed to the other side of the door parallel to CPREG-1/2500 on another side",
+            "description": "<table><tr><td>Ip</td><td></td></tr><tr><td>Voltage</td><td></td></tr><tr><td>Current</td><td></td></tr><tr><td>Holding Force</td><td></td></tr><tr><td>Operating Temparature</td><td></td></tr></table>",
+            "downloads": ["product_catalog", "dimensional_drawing", "mounting_diagram"]
+        },
+
+    ]
+
+    products.forEach(generate)
+
+    function generate(item, index, arr) {
+
+        document.getElementById('container').innerHTML += '<div class="content">' +
+
+            '<div class="image_height">' +
+
+            '<img src="/Electromagnetic_Locks_Door_Handles/' + products[index]['product_code'].replace(/[/]|[' ']/g, '') + '/lock.jpg" />' +
+
+            '</div>' +
+
+            '<center class="product_code">' +
+
+            '<span>' + products[index]['product_code'] + '</span>' +
+
+            '</center>' +
+
+            '<center class="dynamic_content_for_cpreg" id="dc' + index + '">' + products[index]['summary'] + '</center>' +
+
+            '<div class="selector">' +
+
+            '<span class="summary" id="sum' + index + '" onclick="switching(this, ' + index + ')">Description</span>' +
+
+            '<span class="description" id="desc' + index + '" onclick="switching(this, ' + index + ')">Technicals</span>' +
+
+            '<span class="downloads" id="down' + index + '" onclick="switching(this, ' + index + ')">Downloads</span>' +
+
+            '</div>'
+    }
+
+    function switching(self, count) {
+
+        let folder = products[count]['product_code'].replace('/', '')
+
+        document.getElementById('sum' + count).style.borderTop = '3px solid black'
+        document.getElementById('sum' + count).style.background = 'unset'
+
+        document.getElementById('desc' + count).style.borderTop = '3px solid black'
+        document.getElementById('desc' + count).style.background = 'unset'
+
+        document.getElementById('down' + count).style.borderTop = '3px solid black'
+        document.getElementById('down' + count).style.background = 'unset'
+
+        self.style.background = 'white'
+        self.style.borderTop = '3px solid white'
+
+        if (self.className == 'summary') {
+
+            document.getElementById('dc' + count).innerHTML = products[count]['summary']
+        }
+
+        if (self.className == 'description') {
+
+            document.getElementById('dc' + count).innerHTML = products[count]['description']
+        }
+
+        if (self.className == 'downloads') {
+
+            document.getElementById('dc' + count).innerHTML = ''
+
+            products[count]['downloads'].forEach(myFunction)
+
+            function myFunction(item, index, arr) {
+
+                document.getElementById('dc' + count).innerHTML += '<a target="_blank" href="/Electromagnetic_Locks_Door_Handles/' + folder + '/' + item + '.pdf">' + item.replace('_', ' ').toUpperCase() + '</a>'
+            }
+        }
+    }
+
+</script>

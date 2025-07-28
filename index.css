@@ -128,6 +128,19 @@ td {
     padding-bottom: 10px;
 }
 
+.dynamic_content_for_cpreg {
+    height: 500px;
+    align-content: center;
+    border-top: 3px solid black;
+    background: white;
+    padding: 0px 10px;
+}
+
+.dynamic_content_for_cpreg a {
+    display: block;
+    padding-bottom: 10px;
+}
+
 .dynamic_content a {
     display: block;
     padding-bottom: 10px;
