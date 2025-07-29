@@ -14,8 +14,6 @@ td {
 
 #top_bar {
     padding: 20px;
-    position: fixed;
-    width: 100%;
     z-index: 1;
     background: rgb(255, 255, 255, 0.5);
 }
@@ -75,11 +73,9 @@ td {
 
     #installation {
         height: 300px;
-        position: relative;
-        top: 130px;
         border: 3px solid black;
         border-radius: 5px;
-        margin: 0px 10px;
+        margin: 10px;
     }
 
     .dynamic_content_for_locks,
@@ -94,6 +90,16 @@ td {
 }
 
 @media only screen and (min-width: 601px) {
+
+    #container {
+        position: relative;
+        top: 160px;
+    }
+
+    #top_bar {
+        position: fixed;
+        width: 100%;
+    }
 
     #small_bottom_image {
         display: none;
@@ -226,10 +232,6 @@ td {
     margin-bottom: 10px;
 }
 
-#container {
-    position: relative;
-    top: 160px;
-}
 
 #burger {
     position: fixed;
