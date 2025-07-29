@@ -71,6 +71,15 @@ td {
     #small_bottom_image img {
         width: 100%;
     }
+
+    #installation {
+        height: 300px;
+        position: relative;
+        top: 130px;
+        border: 3px solid black;
+        border-radius: 5px;
+        margin: 0px 10px;
+    }
 }
 
 @media only screen and (min-width: 601px) {
@@ -98,6 +107,17 @@ td {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
+    }
+
+    #installation {
+        height: 500px;
+        position: relative;
+        top: 140px;
+        border: 3px solid black;
+        border-radius: 5px;
+        width: 80%;
+        display: flex;
+        justify-self: center;
     }
 }
 
