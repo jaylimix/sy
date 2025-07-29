@@ -212,7 +212,7 @@
 
             function myFunction(item, index, arr) {
 
-                document.getElementById('dc' + count).innerHTML += '<a target="_blank" href="/Electromagnetic_Locks/' + folder + '/' + item + '.pdf">' + item.replace('_', ' ').toUpperCase() + '</a>'
+                document.getElementById('dc' + count).innerHTML += '<a target="_blank" href="/Electromagnetic_Locks/' + folder.replace(' ', '') + '/' + item + '.pdf">' + item.replaceAll('_', ' ').toUpperCase() + '</a>'
             }
         }
     }
