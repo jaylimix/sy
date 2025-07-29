@@ -80,6 +80,10 @@ td {
         border-radius: 5px;
         margin: 0px 10px;
     }
+
+    .content {
+        width: 600px;
+    }
 }
 
 @media only screen and (min-width: 601px) {
