@@ -81,8 +81,8 @@ td {
         margin: 0px 10px;
     }
 
-    .content {
-        width: 600px;
+    .dynamic_content_for_locks {
+        height: 400px;
     }
 }
 
@@ -123,6 +123,10 @@ td {
         display: flex;
         justify-self: center;
     }
+
+    .dynamic_content_for_locks {
+        height: 300px;
+    }
 }
 
 .image_height {
@@ -140,7 +144,6 @@ td {
 }
 
 .dynamic_content_for_locks {
-    height: 300px;
     align-content: center;
     border-top: 3px solid black;
     background: white;
