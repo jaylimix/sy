@@ -87,6 +87,10 @@ td {
         padding: 10px;
         min-height: 200px;
     }
+
+    #management {
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 601px) {
@@ -264,8 +268,7 @@ td {
 }
 
 #factory,
-#map,
-#management {
+#map {
     width: 100%;
 }
 
