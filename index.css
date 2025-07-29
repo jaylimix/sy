@@ -81,8 +81,10 @@ td {
         margin: 0px 10px;
     }
 
-    .dynamic_content_for_locks {
-        height: 400px;
+    .dynamic_content_for_locks,
+    .dynamic_content_for_cpreg {
+        padding: 10px;
+        min-height: 200px;
     }
 }
 
@@ -126,6 +128,12 @@ td {
 
     .dynamic_content_for_locks {
         height: 300px;
+        padding: 0px 10px;
+    }
+
+    .dynamic_content_for_cpreg {
+        height: 500px;
+        padding: 0px 10px;
     }
 }
 
@@ -147,7 +155,6 @@ td {
     align-content: center;
     border-top: 3px solid black;
     background: white;
-    padding: 0px 10px;
 }
 
 .dynamic_content_for_locks a {
@@ -156,11 +163,9 @@ td {
 }
 
 .dynamic_content_for_cpreg {
-    height: 500px;
     align-content: center;
     border-top: 3px solid black;
     background: white;
-    padding: 0px 10px;
 }
 
 .dynamic_content_for_cpreg a {
