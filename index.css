@@ -200,6 +200,7 @@ td {
     height: 60px;
     align-content: center;
     cursor: pointer;
+    vertical-align: middle;
 }
 
 .description {
