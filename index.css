@@ -198,6 +198,7 @@ td {
     text-align: center;
     font-size: 20px;
     line-height: 60px;
+    cursor: pointer;
 }
 
 .description {
