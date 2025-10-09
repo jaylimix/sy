@@ -43,12 +43,16 @@ td {
 
 
 @media only screen and (max-width: 600px) {
+
+    #desktop_video {
+        display: none;
+    }
+
     video {
         height: 100%;
         position: fixed;
         top: 0;
         z-index: -2;
-        right: -90%;
     }
 
     #burger {
@@ -90,6 +94,10 @@ td {
 }
 
 @media only screen and (min-width: 601px) {
+
+    #mobile_video {
+        display: none;
+    }
 
     #container {
         position: relative;
