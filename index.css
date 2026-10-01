@@ -114,10 +114,12 @@ td {
     }
 
     video {
+        height: 100%;
         width: 100%;
         position: fixed;
         top: 0;
         z-index: -1;
+        object-fit: fill;
     }
 
     #burger {
